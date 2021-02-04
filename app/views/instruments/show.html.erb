@@ -1,0 +1,13 @@
+<h1> Instrument information! </h1>
+
+<h3> <%= @instrument.name %> </h3> 
+<h3> <%= @instrument.classification %> </h3>
+
+<ul>
+    <% @instrument.artists.each do |artist_inst| %>
+        <li> <%= artist_inst.name %> </li>
+    <% end %>
+</ul>
+
+<%= button_to "Delete instrument", instrument_path(@instrument), method: "delete" %>
+<%= link_to "Edit instrument", edit_instrument_path(@instrument) %>
