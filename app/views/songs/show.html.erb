@@ -1,14 +1,8 @@
-<h1> Artist information! </h1>
+<h1> Song information! </h1>
 
-<h3> <%= @artist.name %> </h3> 
-<h3> <%= @artist.age %> </h3>
-<h3> <%= @artist.title %> </h3>
+<h3> <%= @song.name %> </h3> 
+<h3> <%= link_to @song.artist.name, artist_path(@song.artist) %> </h3>
+<h3> <%= link_to @song.instrument.name, instrument_path(@song.instrument) %> </h3>
 
-<ul>
-    <% @artist.instruments.each do |instrument_inst| %>
-        <li> <%= instrument_inst.name %> </li>
-    <% end %>
-</ul>
-
-<%= button_to "Delete artist", artist_path(@artist), method: "delete" %>
-<%= link_to "Edit artist", edit_artist_path(@artist) %>
+<%= button_to "Delete Song", song_path(@song), method: "delete" %>
+<%= link_to "Edit Song", edit_song_path(@song) %>
